@@ -1,0 +1,22 @@
+#def env
+# yaml-language-server: $schema=https://github.com/Azure/deployment-environments/releases/download/2022-11-11-preview/manifest.schema.json
+name: ressource group
+summary: This is a deployment of a ressource group Terraform.
+description: Deploys a ressouce group
+templatePath: main.tf
+runner: "wedevcenteracr.azurecr.io/my-terraform:1.7.4”
+parameters:
+- id: "rg_name"
+  name: "Ressource group name"
+  description: "Ressource group name"
+  type: "string"
+  default: "WEGBTRG01"
+
+- id: "ource_group_location"
+  name: "localtion"
+  description: "Location"
+  type: "string"
+  default: "northeurope"
+  allowed:
+    - "westeurope"
+    - "northeurope"
